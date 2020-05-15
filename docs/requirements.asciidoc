@@ -48,7 +48,7 @@ IMPORTANT: This page is work in progress.
 ** Help button: when clicked, all erroneously marked cells get reset to unknown.
 ** Timer
 ** Allow player to select a range (horizontal/vertical) of squares to mark them all in one step.
-** Thumbnail view (see `PiCrossControl`)
+** <<#thumbnail, Thumbnail view>>
 * Support for multiple players (not in parallel, just a login/logout-like system)
 ** Log in as player (requires extra screen showing all players)
 ** Log out (return to player selection screen)
@@ -68,7 +68,33 @@ IMPORTANT: This page is work in progress.
 
 You can invent your own extensions, but check with the lecturer first to make sure they're not trivial to implement.
 
+NOTE: Every item represents an extension.
+For example, implementing a timer counts as one extension, you don't have to also implement a help button and multiselection to make it count: those are separate extensions.
+
 ## Notes
 
 You are allowed to extend/modify the given code, but respect the overall structure of the code, e.g., don't add view-specific code in the domain.
 You need to be able to defend every change you make.
+
+## Clarifications
+
+Below are merely suggestions.
+If you interpreted something differently, it's okay.
+What matters is that you make some kind of extension.
+
+[#thumbnail]
+### Thumbnail
+
+The PiCrossControl has a property called `Thumbnail`.
+This is perhaps a bit misleading, as it is nammed after its original intent instead of what it actually does.
+
+You can assign a UI element to `Thumbnail` (e.g., a `Button`, a `StackPanel` with all kinds of stuff in it, ...)
+This will cause this UI element to be shown in the top left corner of the PiCrossControl, left of the column constraints and above the row constraints. It does not do anything more than this, so it's really quite limited.
+
+What I had in mind with the thumbnail view was that you would show a miniature version of the puzzle in that corner.
+I created a separate control for this, but it is possible to make use of `PiCrossControl` (just link it to the same grid but omit row and column constraints.)
+
+Again, you are free to deviate from this:
+
+* If you want to show a thumbnail view somewhere else than the upper left corner, feel free to do so.
+* If you feel like a clock would be a better fit for that little corner, that's okay.
