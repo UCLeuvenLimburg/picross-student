@@ -6,7 +6,7 @@ Edit the file `report.json`. The file should contain valid json and contain the 
 * `first-name`: your first name, preferably without accents.
 * `last-name`: your last name, preferably without accents.
 * `student-id`: your r-number.
-* `end-result`: optional. Remove it if you have no end result to share, i.e., don't leave in the TODO.
+* `extensions`: list your extensions.
 
 To check the validity of your `report.json`, run the provided `check-report.py` script:
 
